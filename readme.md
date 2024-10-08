@@ -58,3 +58,7 @@ A simple blogging webapp built using NodeJS, ExpressJS and MongoDb. Authenticate
     npm install
     npm start
 ```
+
+
+![Screenshot from 2024-10-08 23-11-34](https://github.com/user-attachments/assets/96cbe084-b86e-4dc0-9c87-61acb599b369)
+
