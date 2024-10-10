@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js"
   },
-  "author": "Jatin Bhardwaj",
+  "author": "Aravindh",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
