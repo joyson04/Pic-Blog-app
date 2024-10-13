@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  # Node.js app service
+  app:
+    image: aravindh05/tests
+    container_name: node-app
+    ports:
+      - "5000:5000" # Map port 3000 in the container to 3000 on the host
+    depends_on:
+    - mongo 
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017/mydatabase # MongoDB connection string
+    volumes:
+      - app-node:/usr/src/app 
+    networks:
+      - app-network
+    
+  # MongoDB service
+  mongo:
+    image: mongo
+    container_name: MongoDB
+    ports:
+      - "27017:27017" 
+    volumes:
+      - mongo-data:/data/db 
+    networks:
+      - app-network
+
+  # Define a shared network for communication between containers
+
+networks:
+  app-network:
+
+volumes:
+  mongo-data:
+  app-node:

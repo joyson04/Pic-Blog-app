@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: post-blog
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: post-blog
+  template:
+    metadata:
+      labels:
+        app: post-blog
+    spec:
+      containers:
+      - name: post-blog
+        image: aravindh05/post-blog:latest
+        ports:
+        - containerPort: 5000
+        env:
+        - name: MONGODB_URL
+          value: "mongodb://mongo-service:27017/blogdb"
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: post-blog-service
+spec:
+  selector:
+    app: post-blog
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+  type: LoadBalancer
