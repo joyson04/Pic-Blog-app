@@ -36,3 +36,4 @@ spec:
   - port: 27017
   selector:
     app: mongodb
+  type: ClusterIP
