@@ -19,7 +19,7 @@ spec:
         - containerPort: 5000
         env:
         - name: mongo_uri
-          value: "mongodb://mongo-service:27017/blogdb"
+          value: "mongodb://mongo-service:27017/mydatabase"
 
 ---
 
