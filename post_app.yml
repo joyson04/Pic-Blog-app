@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: post-blog
-        image: aravindh05/post-blog
+        image: aravindh05/post-blog:latest
         ports:
         - containerPort: 5000
         env:
